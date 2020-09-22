@@ -1,0 +1,153 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 25.93em) {
+    html {
+      font-size: 37.5%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  line-height: 1.6;
+  color: var(--color-white);
+  box-sizing: border-box; }
+
+.header {
+  padding: 1rem 0;
+  background-color: #8447ff; }
+
+.heading-primary {
+  color: #fff;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: .2rem; }
+
+.heading-secondary {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center; }
+
+.row {
+  background-color: #fff;
+  display: flex;
+  justify-content: center; }
+  @media only screen and (max-width: 40.1em) {
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; } }
+
+.card {
+  height: 50rem;
+  flex: 0 0 35%;
+  margin: 2.5rem;
+  background-color: #fff;
+  border-radius: .3rem;
+  box-shadow: 0 2rem 4rem rgba(20, 20, 20, 0.2);
+  transition: all .2s;
+  position: relative; }
+  @media only screen and (max-width: 75em) {
+    .card {
+      margin: 1.5rem;
+      flex: 0 0 40%; } }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      flex: 1 0 35%; } }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      flex: 0 0 35%; } }
+  .card:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+  .card__picture {
+    background-size: cover;
+    height: 41rem;
+    background-blend-mode: screen;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem; }
+    .card__picture--1 {
+      background-image: url(../img/bazook.webp); }
+    .card__picture--2 {
+      background-image: url(../img/finance.webp); }
+    .card__picture--3 {
+      background-image: url(../img/trillo.webp); }
+    .card__picture--4 {
+      background-image: url(../img/natours.webp); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 40rem;
+    right: 1rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(132, 71, 255, 0.85), rgba(132, 71, 255, 0.85)); }
+  .card__details {
+    padding: 3rem;
+    text-align: center; }
+
+.btn {
+  text-transform: uppercase;
+  background-color: #8447ff;
+  padding: 1.5rem 4rem;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400; }
+
+.footer {
+  padding: 1rem 0;
+  background-color: #8447ff;
+  display: flex;
+  justify-content: space-around; }
+  .footer-terms {
+    width: 30%;
+    font-size: 1.6;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center; }
+  .footer-copy {
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: #fff;
+    text-transform: uppercase; }
